@@ -125,7 +125,7 @@ Docker will be used for running Solidity compiler to compile smart contracts. Yo
 
 ## Checking Your Node.js and Yarn Versions
 
-One of the most common causes of errors are problems with the Node.js and Yarn versions. These Gitcoin tasks specifically require Node.js v14.17.x, and a recent version of Yarn. You can check these versions using the commands below.
+One of the most common causes of errors are problems with the Node.js and Yarn versions. These tasks specifically require Node.js v14, and a recent version of Yarn. You can check these versions using the commands below.
 
 ```txt
 node -v

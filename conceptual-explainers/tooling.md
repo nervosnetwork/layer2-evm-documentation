@@ -14,7 +14,7 @@ The CKB node software is what powers the layer 1 blockchain. It handles the aspe
 - [CKB JSON-RPC Guide](https://docs.nervos.org/docs/reference/rpc)
 - [CKB JSON-RPC Documentation](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md)
 
-![CKB Node](https://raw.githubusercontent.com/Kuzirashi/gw-gitcoin-instruction/master/src/conceptual-explainers/images/ckb.png)
+![CKB Node](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/ckb.png)
 
 ## CKB Indexer
 
@@ -38,7 +38,7 @@ CKB-CLI can be downloaded separately, but it is also included with the native CK
 - [Download](https://github.com/nervosnetwork/ckb-cli/releases)
 - [Documentation](https://github.com/nervosnetwork/ckb-cli/blob/develop/README.md)
 
-![CKB-CLI](https://raw.githubusercontent.com/Kuzirashi/gw-gitcoin-instruction/master/src/conceptual-explainers/images/ckb-cli.png)
+![CKB-CLI](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/ckb-cli.png)
 
 ## Tippy
 
@@ -50,7 +50,7 @@ Tippy is very useful for developers to manage multiple Devnet chains quickly wit
 - [Download](https://github.com/nervosnetwork/tippy/releases)
 - [Documentation](https://github.com/nervosnetwork/tippy/blob/develop/README.md)
 
-![Tippy](https://raw.githubusercontent.com/Kuzirashi/gw-gitcoin-instruction/master/src/conceptual-explainers/images/tippy.png)
+![Tippy](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/tippy.png)
 
 ## CKB.tools
 
@@ -67,7 +67,7 @@ All tools rely on the MetaMask wallet exclusively, and run completely in the bro
 - [Official Website](https://ckb.tools/)
 - [Github](https://github.com/jordanmack/ckb-tools)
 
-![CKB.tools](https://raw.githubusercontent.com/Kuzirashi/gw-gitcoin-instruction/master/src/conceptual-explainers/images/ckb-tools.png)
+![CKB.tools](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/ckb-tools.png)
 
 ## SUDT-CLI
 
@@ -80,4 +80,4 @@ SUDT-CLI supports operation on the public Mainnet and Testnet, and private Devne
 - [Github](https://github.com/jordanmack/sudt-cli)
 - [Download](https://github.com/jordanmack/sudt-cli/releases)
 
-![SUDT-CLI](https://raw.githubusercontent.com/Kuzirashi/gw-gitcoin-instruction/master/src/conceptual-explainers/images/sudt-cli.png)
+![SUDT-CLI](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/sudt-cli.png)

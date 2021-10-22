@@ -16,7 +16,7 @@ When interacting directly with Nervos' layer 1 CKB blockchain, no configuration 
 - [Github](https://github.com/MetaMask)
 - [Download](https://metamask.io/download.html)
 
-![Metamask Wallet](https://raw.githubusercontent.com/Kuzirashi/gw-gitcoin-instruction/master/src/conceptual-explainers/images/metamask.png)
+![Metamask Wallet](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/metamask.png)
 
 ## Neuron Wallet
 
@@ -28,7 +28,7 @@ Neuron is created by [Nervina Labs](https://nervina.cn/). Nervina is the develop
 - [Download](https://github.com/nervosnetwork/neuron/releases)
 - [Neuron Guide](https://docs.nervos.org/docs/basics/guides/neuron)
 
-![Neuron Wallet](https://raw.githubusercontent.com/Kuzirashi/gw-gitcoin-instruction/master/src/conceptual-explainers/images/neuron.png)
+![Neuron Wallet](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/neuron.png)
 
 ## Portal Wallet
 
@@ -41,4 +41,4 @@ Lay2 are the developers of the [PW-SDK](https://github.com/lay2dev/pw-core) fram
 - [Official Website](https://ckb.pw/)
 - [Github](https://github.com/lay2dev/PortalWallet)
 
-![Portal Wallet](https://raw.githubusercontent.com/Kuzirashi/gw-gitcoin-instruction/master/src/conceptual-explainers/images/portal-wallet.png)
+![Portal Wallet](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/portal-wallet.png)
