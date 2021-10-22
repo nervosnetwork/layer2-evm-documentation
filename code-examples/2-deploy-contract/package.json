@@ -1,0 +1,15 @@
+{
+  "name": "2-deploy-contract",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@polyjuice-provider/base": "0.0.1-rc11",
+    "@polyjuice-provider/web3": "0.0.1-rc11",
+    "truffle": "^5.4.2",
+    "web3": "^1.4.0"
+  },
+  "scripts": {
+    "compile": "truffle compile"
+  }
+}
