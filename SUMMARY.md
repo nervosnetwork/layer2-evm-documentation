@@ -5,7 +5,7 @@
 
 ## Tasks
 
-* [0. Setup a Local CKB Node and CKB Indexer for the Testnet](tasks/0.-setup-a-local-ckb-node-and-ckb-indexer-for-the-testnet.md)
+* [0. Setup a Local CKB Node and CKB Indexer for the Testnet](tasks/0.setup.node.and.indexer.md)
 * [1. Create account on the EVM Layer 2 Testnet](tasks/create-account-on-the-evm-layer-2-testnet.md)
 
 ## Conceptual Explainers
