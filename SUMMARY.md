@@ -20,4 +20,4 @@
 
 ## Component Tutorials
 
-* [1. Setup a Nervos CKB Layer 1 Account with CKBytes](component-tutorials/1.-setup-a-nervos-ckb-layer-1-account-with-ckbytes.md)
+* [1. Setup a Nervos CKB Layer 1 Account with CKBytes](component-tutorials/1.setup.account.in.ckb.cli.md)
