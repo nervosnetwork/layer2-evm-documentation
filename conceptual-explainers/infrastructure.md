@@ -19,7 +19,7 @@ The second phase is fully decentralized and based on Proof of Stake (PoS). Anyon
 - [Github](https://github.com/nervosnetwork/force-bridge)
 - [Documentation](https://github.com/nervosnetwork/force-bridge/tree/main/docs)
 
-![Force Bridge](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/nervos-force-bridge.png)
+![Force Bridge](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/conceptual-explainers/images/nervos-force-bridge.png)
 
 ## Nervos Explorer
 
@@ -34,7 +34,7 @@ The Nervos Explorer is available for both the Mainnet and the Testnet.
 - [Github (Backend)](https://github.com/nervosnetwork/ckb-explorer)
 - [Github (Frontend)](https://github.com/nervosnetwork/ckb-explorer-frontend)
 
-![Nervos Explorer](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/nervos-explorer.png)
+![Nervos Explorer](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/conceptual-explainers/images/nervos-explorer.png)
 
 ## Nervos Faucet
 
@@ -47,4 +47,4 @@ Developers can currently claim 10,000 CKBytes per address every 24 hours.
 - [Official Website](https://faucet.nervos.org/)
 - [Github](https://github.com/nervosnetwork/ckb-testnet-faucet)
 
-![Nervos Testnet Faucet](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/nervos-faucet.png)
+![Nervos Testnet Faucet](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/conceptual-explainers/images/nervos-faucet.png)

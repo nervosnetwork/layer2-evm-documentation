@@ -18,7 +18,7 @@ A Devnet is a private network for testing purposes. It is similar to the Aggron 
 
 When a developer begins working on a new dApp, using a Devnet is recommended place to begin. A new network can be created instantly, without having to wait for the network to synchronize. A Devnet uses simulated mining, meaning it is centralized, but extremely efficient and low power to operate. There is no faucet on a Devnet. Instead, there is a well-known account that contains a very large amount of CKBytes which are created in the genesis block. A developer can use the provided private keys to access these CKBytes, which should be more that enough for any necessary testing.
 
-![Network Type Compare](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/network-type-compare.png)
+![Network Type Compare](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/conceptual-explainers/images/network-type-compare.png)
 
 ### Layer 1 / Layer 2
 
@@ -43,7 +43,7 @@ Most layer 2 chains on Nervos will have certain common characteristics:
 
 Nervos' first layer 2 offering will utilize the Godwoken and Polyjuice frameworks together to create an Ethereum compatible EVM environment that is capable of supporting Solidity based dApps. This layer 2 chain will be initially run by the Nervos Foundation during the initial launch phase, but will eventually convert into a decentralized chain which is operated by the community. All developers will be able to use this layer 2 chain permissionlessly, using the same tooling that is used for development with Ethereum.
 
-![Layer 1 / Layer 2](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/layer-1-layer-2.png)
+![Layer 1 / Layer 2](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/conceptual-explainers/images/layer-1-layer-2.png)
 
 ### Common User Action Flow
 
@@ -53,7 +53,7 @@ Recognizing this reality is one of the driving factors in Nervos' infrastructure
 
 An average Ethereum user will be able to transfer assets from other blockchains to Nervos using [Force Bridge](https://github.com/Kuzirashi/gw-gitcoin-instruction/blob/master/src/conceptual-explainers/infrastructure.md#force-bridge). Once the bridge transfer is complete, tokens and assets that were transferred over the bridge will reside on Nervos' Layer 1 blockchain. From there they can navigate through the Nervos ecosystem, interacting with dApps on Layer 1, or Layer 2.
 
-![Common User Action Flow](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/src/conceptual-explainers/images/common-user-flow.jpg)
+![Common User Action Flow](https://raw.githubusercontent.com/nervosnetwork/layer2-evm-documentation/master/conceptual-explainers/images/common-user-flow.jpg)
 
 The image above shows how an Ethereum user would start from the Ethereum blockchain, and end up interacting with a Solidity smart contract that is running on Nervos. The steps are as follows:
 
