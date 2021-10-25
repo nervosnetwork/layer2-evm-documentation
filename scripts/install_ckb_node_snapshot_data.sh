@@ -10,7 +10,7 @@ if [ ! -f ./$ckbBinary ]; then
 fi
 
 if [ ! -f ./$snapshot ]; then
-	curl -O https://s3.amazonaws.com/cdn.ckb.tools/snapshots/$snapshot -L
+	curl -O https://cdn-ckb-tools.sfo3.digitaloceanspaces.com/snapshots/$snapshot -L
 fi
 
 if [ -d $indexerDataPath ]; then
