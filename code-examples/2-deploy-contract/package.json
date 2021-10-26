@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@polyjuice-provider/base": "0.0.1-rc11",
-    "@polyjuice-provider/web3": "0.0.1-rc11",
+    "@polyjuice-provider/base": "0.0.1-rc12",
+    "@polyjuice-provider/web3": "0.0.1-rc12",
     "truffle": "^5.4.2",
     "web3": "^1.4.0"
   },
