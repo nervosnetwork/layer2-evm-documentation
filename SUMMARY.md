@@ -16,7 +16,6 @@
 * [8. Modify the Ported dApp so it Supports Ethereum Assets via Force Bridge](tasks/8.modify.dapp.support.force.bridge.md)
 * [9. Initiate a Withdrawal From Layer 2 Back to Layer 1](tasks/9.withdraw.md)
 * [10. Complete Withdrawal Process by Unlocking the Funds](tasks/10.unlock.md)
-* [11. Use a Tron Wallet to Execute a Smart Contract Call](tasks/11.tron.call.md)
 
 ## Conceptual Explainers
 
@@ -35,7 +34,3 @@
 * [Create a Godwoken Account by Making a Layer 2 Deposit](component-tutorials/4.layer2.deposit.md)
 * [Extracting a Private Key from MetaMask Wallet](component-tutorials/5.extract.ethereum.private.key.md)
 * [Setup and sync CKB testnet node, indexer and install ckb-cli](component-tutorials/6.setup.testnet.node.md)
-* [Receive an SUDT in Neuron wallet](component-tutorials/7.receive.sudt.in.neuron.md)
-* [Setup the TronLink Wallet](component-tutorials/8.setup.tronlink.md)
-* [Create a Godwoken Account by Making a Layer 2 Deposit Using a Tron Wallet](component-tutorials/9.layer2.deposit.tron.md)
-* [Extracting a Private Key from the TronLink Wallet](component-tutorials/10.extract.tron.private.key.md)
