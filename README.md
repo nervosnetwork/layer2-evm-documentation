@@ -2,7 +2,7 @@
 
 Welcome to the Nervos' Layer 2 EVM (Ethereum Virtual Machine) Training! Here you will get an introduction to the Nervos ecosystem, learn about the various important concepts, and gain direct hands on experience with the platform in preparation for deploying real-world applications.
 
-To accomplish these goals, we have put together a set of [tasks](broken-reference) which will guide you through the learning process. Each task will tell you what needs to be accomplished, direct you to all the necessary tooling and informative materials you will need to do the task, and tell you what needs to be provided as proof of completion for the judges.
+To accomplish these goals, we have put together a set of [tasks](broken-reference) which will guide you through the learning process. Each task will tell you what needs to be accomplished, direct you to all the necessary tooling and informative materials you will need to do the task.
 
 Nervos has the ability to support compatibility with multiple different kinds of smart contract platforms, but this first set of tasks is geared specifically towards the Ethereum ecosystem. Nervos is a [multi-layer blockchain](conceptual-explainers/structure.md#layer-1-layer-2) platform, and support for smart contract languages like Solidity is handled by an Ethereum EVM compatible [Layer 2](conceptual-explainers/structure.md#layer-1-layer-2). If you're coming from a background in Ethereum, or you have worked with the Solidity smart contract programming language in the past, you should feel right at home once you pickup the basics of how the tooling works on Nervos.
 
