@@ -1,4 +1,10 @@
-/* NOTE The base code is copy from: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/c789941d76dd713333bdeafe5b4484f6d9543c4e/contracts/token/ERC20/ERC20.sol */
+/*
+ * sUDT-ERC20-Proxy Contract
+ * User-defined decimals is supported.
+ *
+ * NOTE The base code is copy from:
+ * https://github.com/OpenZeppelin/openzeppelin-contracts/blob/0500c9e53e0144d04e2a8d8737c873278da17385/contracts/token/ERC20/ERC20.sol
+ */
 
 // SPDX-License-Identifier: MIT
 
@@ -133,23 +139,27 @@ contract ERC20 is Context, IERC20 {
 
     string private _name;
     string private _symbol;
+    uint8 private _decimals;
 
     /**
      * @dev Sets the values for {name} and {symbol}.
      *
-     * The defaut value of {decimals} is 18. To select a different value for
-     * {decimals} you should overload it.
-     *
-     * All three of these values are immutable: they can only be set once during
+     * All five of these values are immutable: they can only be set once during
      * construction.
      */
-    constructor (string memory name_, string memory symbol_, uint256 totalSupply_, uint256 sudtId_) {
+    constructor(
+        string memory name_,
+        string memory symbol_,
+        uint256 totalSupply_,
+        uint256 sudtId_,
+        uint8 decimals_
+    ) {
         _name = name_;
         _symbol = symbol_;
         _totalSupply = totalSupply_;
         _sudtId = sudtId_;
+        _decimals = decimals_;
     }
-
 
     /**
      * @dev Returns the sudt id of the token.
@@ -174,20 +184,18 @@ contract ERC20 is Context, IERC20 {
     }
 
     /**
-     * @dev Returns the number of decimals used to get its user representation.
-     * For example, if `decimals` equals `2`, a balance of `505` tokens should
-     * be displayed to a user as `5,05` (`505 / 10 ** 2`).
+     * @dev Returns the number of decimals defined in constructor(...), used to
+     * get its user representation.
      *
-     * Tokens usually opt for a value of 18, imitating the relationship between
-     * Ether and Wei. This is the value {ERC20} uses, unless this function is
-     * overloaded;
+     * For example, if `decimals` equals `2`, a balance of `505` tokens should
+     * be displayed to a user as `5.05` (`505 / 10 ** 2`).
      *
      * NOTE: This information is only used for _display_ purposes: it in
      * no way affects any of the arithmetic of the contract, including
      * {IERC20-balanceOf} and {IERC20-transfer}.
      */
     function decimals() public view virtual returns (uint8) {
-        return 18;
+        return _decimals;
     }
 
     /**
@@ -230,7 +238,7 @@ contract ERC20 is Context, IERC20 {
     /**
      * @dev See {IERC20-allowance}.
      */
-    function allowance(address owner, address spender) public virtual override returns (uint256) {
+    function allowance(address owner, address spender) public view virtual override returns (uint256) {
         return _allowances[owner][spender];
     }
 

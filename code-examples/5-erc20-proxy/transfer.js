@@ -11,6 +11,7 @@ const SENDER_PRIVATE_KEY = '<SENDER_ETHEREUM_PRIVATE_KEY>';
 const SUDT_ID = '<SUDT_ID>';
 const SUDT_NAME = '<SUDT_NAME>';
 const SUDT_SYMBOL = '<SUDT_SYMBOL>';
+const SUDT_DECIMALS = '<SUDT_DECIMALS>';
 const SUDT_TOTAL_SUPPLY = 9999999999;
 const TRANSFER_AMOUNT = 1000;
 
@@ -47,7 +48,7 @@ web3.eth.Contract.setProvider(provider, web3.eth.accounts);
 
     const deployTx = new web3.eth.Contract(CompiledSudtProxyContractArtifact.abi).deploy({
         data: SudtProxyBytecode,
-        arguments: [SUDT_NAME, SUDT_SYMBOL, SUDT_TOTAL_SUPPLY, SUDT_ID]
+        arguments: [SUDT_NAME, SUDT_SYMBOL, SUDT_TOTAL_SUPPLY, SUDT_ID, SUDT_DECIMALS]
     }).send({
         from: SENDER,
         gas: 6000000,
