@@ -23,7 +23,7 @@ Nervos can also support ERC20 tokens directly using Ethereum EVM compatibility p
 
 ## ERC20 Proxy Contract
 
-The ERC20 Proxy Contract is a special smart contract written in Solidity, which is designed to run on a layer 2 network utilizing the [Godwoken](https://github.com/Kuzirashi/gw-gitcoin-instruction/tree/master/src/conceptual-explainers/frameworks.md#godwoken) and [Polyjuice](https://github.com/Kuzirashi/gw-gitcoin-instruction/tree/master/src/conceptual-explainers/frameworks.md#polyjuice) frameworks. This contract provides a way for EVM code to interact with an ERC20 token interface that is interfacing directly with Polyjuice to control SUDT tokens on Layer 2 as if they were ERC20 tokens.
+The ERC20 Proxy Contract is a special smart contract written in Solidity, which is designed to run on a layer 2 network utilizing the [Godwoken](./frameworks.md#godwoken) and [Polyjuice](./frameworks.md#polyjuice) frameworks. This contract provides a way for EVM code to interact with an ERC20 token interface that is interfacing directly with Polyjuice to control SUDT tokens on Layer 2 as if they were ERC20 tokens.
 
 A deposit transaction is prepared on Layer 1 which takes the SUDT tokens and sends them to Godwoken to be locked, effectively taking them out of circulation on Layer 1. Godwoken will then issue the equivalent amount of SUDT tokens on Layer 2 for the user who deposited. The ERC20 Proxy Contract can then be used to view or transfer these layer 2 SUDT tokens.
 

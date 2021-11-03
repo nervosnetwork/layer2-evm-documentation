@@ -31,7 +31,7 @@ Polyjuice is designed to be used with the Godwoken layer 2 rollup framework. Thi
 
 PW-SDK is an interoperability dApp framework created by the [Lay2](https://lay2.tech/) development team. PW-SDK consists of two primary components, PW-Core and PW-Lock.
 
-PW-Core is a Typescript based framework to build transactions and interface with common dApp wallets from other blockchains, such as the extremely popular [MetaMask](https://github.com/Kuzirashi/gw-gitcoin-instruction/blob/master/src/conceptual-explainers/wallets.md#metamask) wallet. While originally built for the front-end, PW-SDK now also has backend development support.
+PW-Core is a Typescript based framework to build transactions and interface with common dApp wallets from other blockchains, such as the extremely popular [MetaMask](../conceptual-explainers/wallets.md#metamask) wallet. While originally built for the front-end, PW-SDK now also has backend development support.
 
 PW-Lock is a generic multi-chain lock script (smart contract) that allows Nervos to support signatures from Bitcoin, Ethereum, EOS, Tron, as well as other blockchains. This allows Nervos to directly support interoperability with other blockchains by allowing their addresses to automatically map to Nervos CKB addresses.
 

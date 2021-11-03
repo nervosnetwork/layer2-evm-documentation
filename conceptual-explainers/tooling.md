@@ -71,11 +71,11 @@ All tools rely on the MetaMask wallet exclusively, and run completely in the bro
 
 ## SUDT-CLI
 
-SUDT-CLI is a tool that allows developers to quickly issue [SUDT](https://github.com/Kuzirashi/gw-gitcoin-instruction/blob/master/src/conceptual-explainers/standards.md#SUDT) tokens from the command line. SUDT-CLI does not require any external tools or software to be used.
+SUDT-CLI is a tool that allows developers to quickly issue [SUDT](./standards.md#SUDT) tokens from the command line. SUDT-CLI does not require any external tools or software to be used.
 
 Instead of relying on an external wallet, users must provide a private key in the form of a hex string. This can be a private key generated from an existing wallet, or one that is randomly generated. You can use the [Generator Tool](https://ckb.tools/generator) on [CKB.tools](#ckbtools) if you need a randomly generated one for use on a Testnet or Devnet.
 
-SUDT-CLI supports operation on the public Mainnet and Testnet, and private Devnets including those configured to work with Godwoken. SUDT-CLI is designed to be a tool for developers while actively developing and testing. It is not intended to be utilized by dApps to issue SUDT tokens. All dApps should always rely on libraries like [PW-SDK](https://github.com/Kuzirashi/gw-gitcoin-instruction/blob/master/src/conceptual-explainers/frameworks.md#pw-sdk) or [Lumos](https://github.com/nervosnetwork/lumos) to do so.
+SUDT-CLI supports operation on the public Mainnet and Testnet, and private Devnets including those configured to work with Godwoken. SUDT-CLI is designed to be a tool for developers while actively developing and testing. It is not intended to be utilized by dApps to issue SUDT tokens. All dApps should always rely on libraries like [PW-SDK](./frameworks.md#pw-sdk) or [Lumos](https://github.com/nervosnetwork/lumos) to do so.
 
 - [Github](https://github.com/jordanmack/sudt-cli)
 - [Download](https://github.com/jordanmack/sudt-cli/releases)
