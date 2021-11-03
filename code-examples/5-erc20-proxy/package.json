@@ -4,11 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@ckb-lumos/base": "0.17.0-rc5",
-    "@polyjuice-provider/base": "0.0.1-rc11",
-    "@polyjuice-provider/godwoken": "0.0.1-rc11",
-    "@polyjuice-provider/web3": "0.0.1-rc11",
-    "nervos-godwoken-integration": "0.0.8",
+    "@ckb-lumos/base": "0.18.0-rc1",
+    "@polyjuice-provider/base": "0.0.1-rc13",
+    "@polyjuice-provider/web3": "0.0.1-rc13",
+    "nervos-godwoken-integration": "0.0.12",
     "truffle": "5.4.2",
     "web3": "1.4.0"
   },

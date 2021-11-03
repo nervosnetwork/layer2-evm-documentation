@@ -10,8 +10,7 @@
     "install-3": "yarn install --cwd code-examples/3-call-contract",
     "install-5": "yarn install --cwd code-examples/5-erc20-proxy",
     "install-6": "yarn install --cwd code-examples/6-bridge",
-    "install-8": "yarn install --cwd code-examples/8-bridge-integration",
     "install-11": "yarn install --cwd code-examples/11-tron",
-    "install-all": "yarn install-2 && yarn install-3 && yarn install-5 && yarn install-6 && yarn install-8 && yarn install-11"
+    "install-all": "yarn install-2 && yarn install-3 && yarn install-5 && yarn install-6"
   }
 }

@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@polyjuice-provider/web3": "0.0.1-rc11",
-    "nervos-godwoken-integration": "0.0.8",
+    "@polyjuice-provider/web3": "0.0.1-rc13",
+    "nervos-godwoken-integration": "0.0.12",
     "truffle": "5.4.2",
     "web3": "1.4.0"
   }
