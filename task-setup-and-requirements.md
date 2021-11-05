@@ -19,13 +19,14 @@ The following operating systems are officially supported. Other operating system
 * [Windows 10](https://www.microsoft.com/en-us/windows) + [WSL2](https://docs.microsoft.com/en-us/windows/wsl/about) (Ubuntu 20.04 virtualized)
 * [Windows 10](https://www.microsoft.com/en-us/windows) + [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview)
 
-> Note: Throughout most of our demos and walkthroughs, Ubuntu Linux 20.04 is used. This is the preferred platform.
+> Note: Throughout most of our demos and walkthroughs, Ubuntu Linux 20.04 is used. This is the preferred platform by most developers.
 
 ## Prerequisite Development Software
 
 * Build Tools
 * Curl
 * 7zip (optional)
+* Unzip (optional)
 * Git
 * Node.js 16.13.x (LTS)
 * Python 2.7.x
@@ -40,10 +41,10 @@ The following operating systems are officially supported. Other operating system
 
 ### Ubuntu 20.04 (Native or Windows 10 + WSL2)
 
-#### Build Tools + Git + Curl + 7zip
+#### Build Tools + Git + Curl + 7zip + Unzip
 
 ```
-sudo apt install build-essential git curl p7zip-full
+sudo apt install build-essential git curl p7zip-full unzip
 ```
 
 #### Node.js
@@ -112,7 +113,7 @@ npm i -g yarn
 
 #### Docker
 
-Docker will be used for running Solidity compiler to compile smart contracts. You can find informations how to install it on official [Docker website](https://docs.docker.com/get-docker/).
+Docker will be used for running the Solidity compiler to compile smart contracts. You can find information on how to install it from the official [Docker website](https://docs.docker.com/get-docker/).
 
 > Note: The current user must have permission to manage Docker instances. [How to manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/).
 
@@ -123,7 +124,7 @@ Docker will be used for running Solidity compiler to compile smart contracts. Yo
 
 ## Checking Your Node.js and Yarn Versions
 
-One of the most common causes of errors are problems with the Node.js and Yarn versions. These tasks specifically require Node.js v16, and a recent version of Yarn. You can check these versions using the commands below.
+One of the most common causes of errors is having the incorrect version of Node.js or Yarn. These tasks specifically require Node.js v16.x.x, and a recent version of Yarn. You can check these versions using the commands belowx
 
 ```
 node -v
