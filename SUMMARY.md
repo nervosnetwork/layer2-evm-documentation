@@ -17,14 +17,14 @@
 * [9. Initiate a Withdrawal From Layer 2 Back to Layer 1](tasks/9.withdraw.md)
 * [10. Complete Withdrawal Process by Unlocking the Funds](tasks/10.unlock.md)
 
-## Conceptual Explainers
+## Concept Explainers
 
-* [Frameworks](conceptual-explainers/frameworks.md)
-* [Infrastructure](conceptual-explainers/infrastructure.md)
-* [Standards](conceptual-explainers/standards.md)
-* [Structure](conceptual-explainers/structure.md)
-* [Tooling](conceptual-explainers/tooling.md)
-* [Wallets](conceptual-explainers/wallets.md)
+* [Frameworks](concept-explainers/frameworks.md)
+* [Infrastructure](concept-explainers/infrastructure.md)
+* [Standards](concept-explainers/standards.md)
+* [Structure](concept-explainers/structure.md)
+* [Tooling](concept-explainers/tooling.md)
+* [Wallets](concept-explainers/wallets.md)
 
 ## Component Tutorials
 
