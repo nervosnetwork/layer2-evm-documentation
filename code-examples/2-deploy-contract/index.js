@@ -28,7 +28,8 @@ if(compiledContractArtifact === null)
 const DEPLOYER_PRIVATE_KEY = '<YOUR_ETHEREUM_PRIVATE_KEY>'; // Replace this with your Ethereum private key with funds on Layer 2.
 
 const polyjuiceConfig = {
-    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev'
+    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev',
+    abiItems: compiledContractArtifact.abi
 };
   
 const provider = new PolyjuiceHttpProvider(

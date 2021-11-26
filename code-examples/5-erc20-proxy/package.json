@@ -5,8 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "@ckb-lumos/base": "0.18.0-rc1",
-    "@polyjuice-provider/base": "0.0.1-rc13",
-    "@polyjuice-provider/web3": "0.0.1-rc13",
+    "@polyjuice-provider/base": "0.1.0",
+    "@polyjuice-provider/web3": "0.1.0",
     "nervos-godwoken-integration": "0.0.12",
     "truffle": "5.4.2",
     "web3": "1.4.0"
