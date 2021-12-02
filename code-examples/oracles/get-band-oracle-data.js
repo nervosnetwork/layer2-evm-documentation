@@ -88,7 +88,8 @@ const CONTRACT_ABI = [
 const CONTRACT_ADDRESS = '0x633B14f58A1343Aeb43e9C68c8aFB4c866eBb649';
 
 const polyjuiceConfig = {
-    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev'
+    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev',
+    abiItems: CONTRACT_ABI
 };
   
 const provider = new PolyjuiceHttpProvider(

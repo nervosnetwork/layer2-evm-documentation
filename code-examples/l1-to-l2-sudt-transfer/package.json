@@ -6,8 +6,8 @@
   "dependencies": {
     "@ckb-lumos/base": "^0.18.0-rc1",
     "@lay2/pw-core": "git+https://github.com/lay2dev/pw-core.git#f184de7b4933ae52e7222967b3070e8abf01e272",
-    "@polyjuice-provider/base": "^0.0.1-rc11",
-    "@polyjuice-provider/web3": "0.0.1-rc11",
+    "@polyjuice-provider/base": "^0.1.0",
+    "@polyjuice-provider/web3": "0.1.0",
     "ckb-js-toolkit": "^0.10.2",
     "nervos-godwoken-integration": "0.0.11",
     "web3": "1.4.0"

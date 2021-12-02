@@ -5,8 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "@ckb-lumos/base": "0.16.0",
-    "@polyjuice-provider/base": "0.0.1-rc6",
-    "@polyjuice-provider/godwoken": "0.0.1-rc6",
+    "@polyjuice-provider/base": "0.1.0",
+    "@polyjuice-provider/godwoken": "0.1.0",
     "@polyjuice-provider/web3": "0.0.1-rc6",
     "ethers": "5.4.4",
     "keccak256": "1.0.3",

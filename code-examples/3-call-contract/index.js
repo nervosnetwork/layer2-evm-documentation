@@ -15,7 +15,8 @@ const CONTRACT_ABI = [<YOUR_CONTRACT_ABI>]; // this should be an Array []
 const CONTRACT_ADDRESS = '<YOUR_CONTRACT_ADDRESS>';
 
 const polyjuiceConfig = {
-    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev'
+    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev',
+    abiItems: CONTRACT_ABI
 };
   
 const provider = new PolyjuiceHttpProvider(
