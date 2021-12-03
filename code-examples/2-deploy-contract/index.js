@@ -29,13 +29,14 @@ const DEPLOYER_PRIVATE_KEY = '<YOUR_ETHEREUM_PRIVATE_KEY>'; // Replace this with
 
 const polyjuiceConfig = {
     web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev',
-    abiItems: compiledContractArtifact.abi
 };
   
 const provider = new PolyjuiceHttpProvider(
     polyjuiceConfig.web3Url,
     polyjuiceConfig,
 );
+
+provider.setMultiAbi([compiledContractArtifact.abi]);
 
 const web3 = new Web3(provider);
 

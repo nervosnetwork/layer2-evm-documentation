@@ -17,9 +17,8 @@ const web3 = new Web3(provider);
 
 (async () => {
     console.log(`Using Ethereum address: ${ETHEREUM_ADDRESS}`);
+    
     const addressTranslator = new AddressTranslator();
-    const polyjuiceAddress = addressTranslator.ethAddressToGodwokenShortAddress(ETHEREUM_ADDRESS);
-    console.log(`Corresponding Polyjuice address: ${polyjuiceAddress}\n`);
 
     const depositAddress = await addressTranslator.getLayer2DepositAddress(web3, ETHEREUM_ADDRESS);
 

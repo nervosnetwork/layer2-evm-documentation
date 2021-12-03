@@ -12,14 +12,15 @@ const SUDT_TOTAL_SUPPLY = 9999999999;
 const SUDT_DECIMALS = 18; // Make sure this matches your token! Eg. for ckETH it is 18.
 
 const polyjuiceConfig = {
-    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev',
-    abiItems: CompiledContractArtifact.abi
+    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev'
 };
   
 const provider = new PolyjuiceHttpProvider(
     polyjuiceConfig.web3Url,
     polyjuiceConfig,
 );
+
+provider.setMultiAbi([CompiledContractArtifact.abi]);
 
 const web3 = new Web3(provider);
 

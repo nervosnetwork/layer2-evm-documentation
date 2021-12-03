@@ -1,18 +1,25 @@
 const { Godwoker } = require("@polyjuice-provider/base");
 const { utils } = require("@ckb-lumos/base");
+const fetch = require('node-fetch');
 
 const SUDT_TYPE_ARGS = "<YOUR_SUDT_TYPE_ARGS>";
-
 const GODWOKEN_RPC_URL = "https://godwoken-testnet-web3-rpc.ckbapp.dev";
-const polyjuiceConfig = {
-  rollupTypeHash:
-    "0x4cc2e6526204ae6a2e8fcf12f7ad472f41a1606d5b9624beebd215d780809f6a",
-  ethAccountLockCodeHash:
-    "0xdeec13a7b8e100579541384ccaf4b5223733e4a5483c3aec95ddc4c1d5ea5b22",
-  web3Url: GODWOKEN_RPC_URL,
-};
 
 (async () => {
+  const polyjuiceConfig = {
+    rollupTypeHash: (await (await fetch(GODWOKEN_RPC_URL, {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({jsonrpc:"2.0",method:"poly_getRollupTypeHash",params: [],id:1})
+    })).json()).result,
+    ethAccountLockCodeHash: (await (await fetch(GODWOKEN_RPC_URL, {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({jsonrpc:"2.0",method:"poly_getEthAccountLockHash",params: [],id:1})
+      })).json()).result,
+    web3Url: GODWOKEN_RPC_URL,
+  };
+
   console.log(`Fetching SUDT ID for SUDT with Type Args: ${SUDT_TYPE_ARGS}`);
   const godwoker = new Godwoker(GODWOKEN_RPC_URL, {
     godwoken: {

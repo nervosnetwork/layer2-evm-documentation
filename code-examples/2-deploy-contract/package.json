@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@polyjuice-provider/web3": "0.0.1-rc14",
-    "truffle": "^5.4.2",
-    "web3": "^1.4.0"
+    "@polyjuice-provider/web3": "0.1.1",
+    "truffle": "5.4.22",
+    "web3": "1.6.1"
   },
   "scripts": {
     "compile": "truffle compile"

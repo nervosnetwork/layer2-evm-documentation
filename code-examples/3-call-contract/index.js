@@ -15,14 +15,15 @@ const CONTRACT_ABI = [<YOUR_CONTRACT_ABI>]; // this should be an Array []
 const CONTRACT_ADDRESS = '<YOUR_CONTRACT_ADDRESS>';
 
 const polyjuiceConfig = {
-    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev',
-    abiItems: CONTRACT_ABI
+  web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev'
 };
   
 const provider = new PolyjuiceHttpProvider(
     polyjuiceConfig.web3Url,
     polyjuiceConfig,
 );
+
+provider.setMultiAbi([CONTRACT_ABI]);
 
 const web3 = new Web3(provider);
 
