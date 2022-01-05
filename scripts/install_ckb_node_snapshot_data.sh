@@ -2,7 +2,7 @@
 
 ckbBinary="./ckb"
 indexerDataPath="./data/db"
-snapshot="20211024-nervos-ckb-node-0.101.0-testnet-snapshot.7z"
+snapshot="20220102-nervos-ckb-node-0.101.3-testnet-snapshot.7z"
 
 if [ ! -f ./$ckbBinary ]; then
 	echo "The ckb binary was not found in the current directory. This script should only be executed from the ckb directory."
