@@ -2699,10 +2699,10 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-nervos-godwoken-integration@0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/nervos-godwoken-integration/-/nervos-godwoken-integration-0.2.0.tgz#b299add007427b7ca652c64326d9e37388eeeab5"
-  integrity sha512-Kfms9aFXcZmWACZVnzNfogUN/Ka8Bs2QCe05t6ULYJT+0sgQ8pJLNYZapuN5PdEQrMj8FyNK1p3gp4zUAv/GYw==
+nervos-godwoken-integration@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/nervos-godwoken-integration/-/nervos-godwoken-integration-0.2.1.tgz#f8ba073d0312fcf1f017ffe87f95dcad1b128990"
+  integrity sha512-wS919aEkIUZhRQks4txvq+oC2ZeOGGBbJ2ejpi70Yl/WcJSyNoMBa0VDTYlChDNOWpL5P98ZMyaCgbyYiTL3EQ==
   dependencies:
     "@ckb-lumos/lumos" "0.17.0-rc7"
     "@ckitjs/base" "0.1.0"
