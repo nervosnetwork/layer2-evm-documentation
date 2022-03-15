@@ -1,15 +1,14 @@
 const { existsSync } = require('fs');
 const Web3 = require('web3');
-const { PolyjuiceHttpProvider, PolyjuiceAccounts } = require("@polyjuice-provider/web3");
 
 const contractName = process.argv.slice(2)[0];
 
 if (!contractName) {
-    throw new Error(`No compiled contract specified to deploy. Please put it in "src/examples/2-deploy-contract/build/contracts" directory and provide its name as an argument to this program, eg.: "node index.js SimpleStorage.json"`);
+    throw new Error(`No compiled contract specified to deploy. Please compile or create "src/examples/2-deploy-contract/artifacts/contracts/CONTRACT_NAME.sol/CONTRACT_NAME.json" file and provide its name as an argument to this program, eg.: "node index.js SimpleStorage"`);
 }
 
 let compiledContractArtifact = null;
-const filenames = [`./build/contracts/${contractName}`, `./${contractName}`];
+const filenames = [`./artifacts/contracts/${contractName}.sol/${contractName}.json`, `./${contractName}`];
 for(const filename of filenames)
 {
     if(existsSync(filename))
@@ -27,22 +26,9 @@ if(compiledContractArtifact === null)
 
 const DEPLOYER_PRIVATE_KEY = '<YOUR_ETHEREUM_PRIVATE_KEY>'; // Replace this with your Ethereum private key with funds on Layer 2.
 
-const polyjuiceConfig = {
-    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev',
-};
-  
-const provider = new PolyjuiceHttpProvider(
-    polyjuiceConfig.web3Url,
-    polyjuiceConfig,
-);
+const web3 = new Web3('https://godwoken-testnet-web3-v1-rpc.ckbapp.dev');
 
-provider.setMultiAbi([compiledContractArtifact.abi]);
-
-const web3 = new Web3(provider);
-
-web3.eth.accounts = new PolyjuiceAccounts(polyjuiceConfig);
 const deployerAccount = web3.eth.accounts.wallet.add(DEPLOYER_PRIVATE_KEY);
-web3.eth.Contract.setProvider(provider, web3.eth.accounts);
 
 (async () => {
     const balance = BigInt(await web3.eth.getBalance(deployerAccount.address));
