@@ -1,5 +1,4 @@
 const Web3 = require('web3');
-const { PolyjuiceHttpProvider, PolyjuiceAccounts } = require("@polyjuice-provider/web3");
 
 /**
  * BEFORE USING THIS SCRIPT MAKE SURE TO REPLACE:
@@ -14,22 +13,9 @@ const ACCOUNT_PRIVATE_KEY = '<YOUR_ETHEREUM_PRIVATE_KEY>'; // Replace this with 
 const CONTRACT_ABI = [<YOUR_CONTRACT_ABI>]; // this should be an Array []
 const CONTRACT_ADDRESS = '<YOUR_CONTRACT_ADDRESS>';
 
-const polyjuiceConfig = {
-  web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev'
-};
-  
-const provider = new PolyjuiceHttpProvider(
-    polyjuiceConfig.web3Url,
-    polyjuiceConfig,
-);
+const web3 = new Web3('https://godwoken-testnet-web3-v1-rpc.ckbapp.dev');
 
-provider.setMultiAbi([CONTRACT_ABI]);
-
-const web3 = new Web3(provider);
-
-web3.eth.accounts = new PolyjuiceAccounts(polyjuiceConfig);
 const account = web3.eth.accounts.wallet.add(ACCOUNT_PRIVATE_KEY);
-web3.eth.Contract.setProvider(provider, web3.eth.accounts);
 
 async function readCall() {
     const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
