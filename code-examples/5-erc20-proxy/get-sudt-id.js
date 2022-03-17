@@ -3,7 +3,7 @@ const { utils } = require("@ckb-lumos/base");
 const fetch = require('node-fetch');
 
 const SUDT_TYPE_ARGS = "<YOUR_SUDT_TYPE_ARGS>";
-const GODWOKEN_RPC_URL = "https://godwoken-testnet-web3-rpc.ckbapp.dev";
+const GODWOKEN_RPC_URL = "https://godwoken-testnet-web3-v1-rpc.ckbapp.dev";
 
 (async () => {
   const polyjuiceConfig = {

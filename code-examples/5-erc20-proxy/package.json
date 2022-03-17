@@ -6,8 +6,7 @@
   "dependencies": {
     "@ckb-lumos/base": "0.18.0-rc1",
     "@polyjuice-provider/base": "0.1.1",
-    "@polyjuice-provider/web3": "0.1.1",
-    "nervos-godwoken-integration": "0.0.18",
+    "nervos-godwoken-integration": "0.3.0",
     "node-fetch": "2.6.6",
     "truffle": "5.4.22",
     "web3": "1.6.1"

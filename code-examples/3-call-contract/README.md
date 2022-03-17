@@ -1,0 +1,4 @@
+```
+yarn
+node index.js
+```
