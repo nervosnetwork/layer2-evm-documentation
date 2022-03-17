@@ -30,6 +30,4 @@
 * [Setup a Nervos CKB Layer 1 Account with CKBytes](component-tutorials/1.setup.account.in.ckb.cli.md)
 * [Mint an SUDT Using the SUDT-CLI Command-Line Tool](component-tutorials/2.issue.sudt.cli.md)
 * [Setup and Use the account-cli Tool](component-tutorials/3.setup.and.use.account.cli.md)
-* [Create a Godwoken Account by Making a Layer 2 Deposit](component-tutorials/4.layer2.deposit.md)
 * [Extracting a Private Key from MetaMask Wallet](component-tutorials/5.extract.ethereum.private.key.md)
-* [Create Layer 2 Account without Ethereum wallet](component-tutorials/create-layer-2-account-without-ethereum-wallet.md)
