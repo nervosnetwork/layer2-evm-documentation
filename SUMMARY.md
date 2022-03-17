@@ -5,7 +5,6 @@
 
 ## Tasks
 
-* [0. Setup a Local CKB Node and CKB Indexer for the Testnet](tasks/0.setup.node.and.indexer.md)
 * [1. Create account on the EVM Layer 2 Testnet](tasks/1.create.godwoken.account.md)
 * [2. Deploy a Simple Ethereum Smart Contract on Polyjuice](tasks/2.deploy.eth.contract.md)
 * [3. Issue a Smart Contract Call to the Deployed Smart Contract](tasks/3.issue.contract.call.md)
