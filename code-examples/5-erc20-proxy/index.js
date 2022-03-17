@@ -1,6 +1,5 @@
 const fs = require('fs').promises;
 const Web3 = require('web3');
-const { PolyjuiceHttpProvider, PolyjuiceAccounts } = require("@polyjuice-provider/web3");
 
 const CompiledContractArtifact = require(`./build/contracts/ERC20.json`);
 
@@ -11,22 +10,9 @@ const SUDT_SYMBOL = 'MTK';
 const SUDT_TOTAL_SUPPLY = 9999999999;
 const SUDT_DECIMALS = 18; // Make sure this matches your token! Eg. for ckETH it is 18.
 
-const polyjuiceConfig = {
-    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev'
-};
-  
-const provider = new PolyjuiceHttpProvider(
-    polyjuiceConfig.web3Url,
-    polyjuiceConfig,
-);
+const web3 = new Web3('https://godwoken-testnet-web3-v1-rpc.ckbapp.dev');
 
-provider.setMultiAbi([CompiledContractArtifact.abi]);
-
-const web3 = new Web3(provider);
-
-web3.eth.accounts = new PolyjuiceAccounts(polyjuiceConfig);
 const account = web3.eth.accounts.wallet.add(ACCOUNT_PRIVATE_KEY);
-web3.eth.Contract.setProvider(provider, web3.eth.accounts);
 
 (async () => {
     // You need to use this exact bytecode for SUDT proxy otherwise it won't work

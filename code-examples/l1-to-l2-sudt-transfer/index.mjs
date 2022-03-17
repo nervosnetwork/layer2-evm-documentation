@@ -177,7 +177,6 @@ async function waitUntilCommitted(txHash, rpc, timeout = 18) {
   console.log(`Getting balance on Layer 2...`);
 
   const polyjuiceAddress = addressTranslator.ethAddressToGodwokenShortAddress(ETHEREUM_ADDRESS);
-  console.log(`Corresponding Polyjuice address: ${polyjuiceAddress}\n`);
 
   console.log(`Waiting 120s before checking Layer 2 balance to give operator time to process SUDT deposit.`);
   await asyncSleep(120000);

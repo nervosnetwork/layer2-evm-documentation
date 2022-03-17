@@ -61,11 +61,8 @@ web3.eth.Contract.setProvider(provider, web3.eth.accounts);
     console.log(`Deployed SUDT-ERC20 Proxy contract address: ${contract.options.address}`);
 
     const addressTranslator = new AddressTranslator();
-    const senderPolyAddress = addressTranslator.ethAddressToGodwokenShortAddress(SENDER);
-
     const receiverPolyAddress = addressTranslator.ethAddressToGodwokenShortAddress(RECEIVER);
 
-    console.log(`Corresponding Sender Polyjuice address: ${senderPolyAddress}`);
 
     console.log(`Checking SUDT balance...`);
 
