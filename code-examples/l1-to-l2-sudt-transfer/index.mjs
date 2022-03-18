@@ -1,7 +1,8 @@
 import Web3 from "web3";
-import { PolyjuiceAccounts, PolyjuiceHttpProvider } from "@polyjuice-provider/web3";
 import { AddressTranslator } from "nervos-godwoken-integration";
 import {
+  Address,
+  AddressType,
   Amount,
   AmountUnit,
   Builder,
@@ -14,7 +15,7 @@ import { RPC } from "ckb-js-toolkit";
 import fs from 'fs/promises';
 
 import { SUDT_ERC20_PROXY_ABI } from "./contracts/SudtERC20Proxy-abi.mjs";
-import { POLYJUICE_CONFIG } from "./config.mjs";
+import { GODWOKEN_RPC_URL } from "./config.mjs";
 import { getSudtIdFromTypeArgs } from "./utils.mjs";
 
 const PWCore = PWCoreDefault.default;
@@ -37,16 +38,9 @@ const _config = {
   CKB_URL: "http://3.235.223.161:18114",
 };
 
-const provider = new PolyjuiceHttpProvider(
-  POLYJUICE_CONFIG.web3Url,
-  POLYJUICE_CONFIG
-);
+const web3 = new Web3(GODWOKEN_RPC_URL);
 
-const web3 = new Web3(provider);
-
-web3.eth.accounts = new PolyjuiceAccounts(POLYJUICE_CONFIG);
 const account = web3.eth.accounts.wallet.add(ETHEREUM_PRIVATE_KEY);
-web3.eth.Contract.setProvider(provider, web3.eth.accounts);
 
 function asyncSleep(ms = 1000) {
   return new Promise((r) => setTimeout(r, ms));
@@ -78,14 +72,14 @@ async function waitUntilCommitted(txHash, rpc, timeout = 18) {
   console.log(`Transferring from CKB address: ${ckbAddress.addressString}`);
 
   const addressTranslator = new AddressTranslator();
+  await addressTranslator.init('testnet');
   console.log(`To Ethereum address on Layer 2: ${ETHEREUM_ADDRESS}`);
 
   const layer2depositAddress = await addressTranslator.getLayer2DepositAddress(
-    web3,
     ETHEREUM_ADDRESS
   );
   console.log(
-    `Deposit to Layer 2 address on Layer 1: \n${layer2depositAddress.addressString}`
+    `Deposit to Layer 2 address on Layer 1: \n${layer2depositAddress}`
   );
 
   const collector = new IndexerCollector(_config.INDEXER_URL);
@@ -116,7 +110,7 @@ async function waitUntilCommitted(txHash, rpc, timeout = 18) {
   console.log(`Transferring to Layer 2`);
   const layer1TxHash = await pwCore.sendSUDT(
     sudt,
-    layer2depositAddress,
+    new Address(layer2depositAddress, AddressType.ckb),
     SUDT_AMOUNT_TO_SEND,
     true,
     null,
@@ -162,6 +156,7 @@ async function waitUntilCommitted(txHash, rpc, timeout = 18) {
     })
     .send({
       from: account.address,
+      gas: 6000000
     });
 
   deployTx.on("transactionHash", (hash) =>
@@ -176,12 +171,10 @@ async function waitUntilCommitted(txHash, rpc, timeout = 18) {
 
   console.log(`Getting balance on Layer 2...`);
 
-  const polyjuiceAddress = addressTranslator.ethAddressToGodwokenShortAddress(ETHEREUM_ADDRESS);
-
   console.log(`Waiting 120s before checking Layer 2 balance to give operator time to process SUDT deposit.`);
   await asyncSleep(120000);
 
-  const tokenBalanceOnLayer2 = await contract.methods.balanceOf(polyjuiceAddress).call();
+  const tokenBalanceOnLayer2 = await contract.methods.balanceOf(ETHEREUM_ADDRESS).call();
   console.log({
       tokenBalanceOnLayer2
   });

@@ -1,10 +1,11 @@
 import { Godwoker }from "@polyjuice-provider/base";
-import { GODWOKEN_RPC_URL, POLYJUICE_CONFIG } from './config.mjs';
+import { GODWOKEN_RPC_URL, getPolyjuiceConfig } from './config.mjs';
 
 import lumos from '@ckb-lumos/base';
 const { utils } = lumos;
 
 export async function getSudtIdFromTypeArgs(sudtTypeArgs) {
+  const POLYJUICE_CONFIG = await getPolyjuiceConfig();
   const godwoker = new Godwoker(GODWOKEN_RPC_URL, {
     godwoken: {
       rollup_type_hash: POLYJUICE_CONFIG.rollupTypeHash,
