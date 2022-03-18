@@ -1,9 +1,7 @@
 const fs = require('fs').promises;
 const Web3 = require('web3');
-const { PolyjuiceHttpProvider, PolyjuiceAccounts } = require("@polyjuice-provider/web3");
-const { AddressTranslator } = require('nervos-godwoken-integration');
 
-const CompiledSudtProxyContractArtifact = require(`./build/contracts/ERC20.json`);
+const CompiledSudtProxyContractArtifact = require(`./artifacts/contracts/SudtERC20Proxy.sol/ERC20.json`);
 
 const SENDER = '<SENDER_ETHEREUM_ADDRESS>';
 const RECEIVER = '<RECEIVER_ETHEREUM_ADDRESS>';
@@ -13,22 +11,11 @@ const SUDT_NAME = '<SUDT_NAME>';
 const SUDT_SYMBOL = '<SUDT_SYMBOL>';
 const SUDT_DECIMALS = '<SUDT_DECIMALS>';
 const SUDT_TOTAL_SUPPLY = 9999999999;
-const TRANSFER_AMOUNT = 1000;
+const TRANSFER_AMOUNT = 1;
 
-const polyjuiceConfig = {
-    web3Url: 'https://godwoken-testnet-web3-rpc.ckbapp.dev'
-};
+const web3 = new Web3('https://godwoken-testnet-web3-v1-rpc.ckbapp.dev');
 
-const provider = new PolyjuiceHttpProvider(
-    polyjuiceConfig.web3Url,
-    polyjuiceConfig,
-);
-
-const web3 = new Web3(provider);
-
-web3.eth.accounts = new PolyjuiceAccounts(polyjuiceConfig);
 web3.eth.accounts.wallet.add(SENDER_PRIVATE_KEY);
-web3.eth.Contract.setProvider(provider, web3.eth.accounts);
 
 (async () => {
     // You need to use this exact bytecode for SUDT proxy otherwise it won't work
@@ -60,23 +47,20 @@ web3.eth.Contract.setProvider(provider, web3.eth.accounts);
 
     console.log(`Deployed SUDT-ERC20 Proxy contract address: ${contract.options.address}`);
 
-    const addressTranslator = new AddressTranslator();
-    const receiverPolyAddress = addressTranslator.ethAddressToGodwokenShortAddress(RECEIVER);
-
 
     console.log(`Checking SUDT balance...`);
 
-    console.log('Sender SUDT balance before transfer: ', await contract.methods.balanceOf(senderPolyAddress).call({
+    console.log('Sender SUDT balance before transfer: ', await contract.methods.balanceOf(SENDER).call({
         from: SENDER
     }));
-    console.log('Receiver SUDT balance before transfer: ', await contract.methods.balanceOf(receiverPolyAddress).call({
+    console.log('Receiver SUDT balance before transfer: ', await contract.methods.balanceOf(RECEIVER).call({
         from: RECEIVER
     }));
 
     console.log('Try calling transfer before sending...');
 
     try {
-        await contract.methods.transfer(receiverPolyAddress, TRANSFER_AMOUNT).call({
+        await contract.methods.transfer(RECEIVER, TRANSFER_AMOUNT).call({
             from: SENDER,
             gasLimit: 6000000,
             gasPrice: '0'
@@ -88,16 +72,16 @@ web3.eth.Contract.setProvider(provider, web3.eth.accounts);
 
     console.log('Try sending SUDT transfer...');
 
-    await contract.methods.transfer(receiverPolyAddress, TRANSFER_AMOUNT).send({
+    await contract.methods.transfer(RECEIVER, TRANSFER_AMOUNT).send({
         from: SENDER,
         gasLimit: 6000000,
         gasPrice: '0'
     })
 
-    console.log('Sender SUDT balance after transfer: ', await contract.methods.balanceOf(senderPolyAddress).call({
+    console.log('Sender SUDT balance after transfer: ', await contract.methods.balanceOf(SENDER).call({
         from: SENDER
     }));
-    console.log('Receiver SUDT balance after transfer: ', await contract.methods.balanceOf(receiverPolyAddress).call({
+    console.log('Receiver SUDT balance after transfer: ', await contract.methods.balanceOf(RECEIVER).call({
         from: RECEIVER
     }));
 })();
