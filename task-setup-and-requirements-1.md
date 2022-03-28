@@ -10,7 +10,7 @@ Oracle is external smart-contract used to provide offchain data to onchain appli
 
 ## Band
 
-1. StdReference address (Godwoken Testnet v1): 0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68
+1. StdReference address (Godwoken Testnet v1): [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://v1.aggron.gwscan.com/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)
 2. Documentation: [https://docs.bandchain.org/band-standard-dataset/using-band-dataset/using-band-dataset-evm.html](https://docs.bandchain.org/band-standard-dataset/using-band-dataset/using-band-dataset-evm.html)&#x20;
 3. More information: [https://bandprotocol.com/](https://bandprotocol.com)
 
