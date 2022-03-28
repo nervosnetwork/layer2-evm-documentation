@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Task Setup and Requirements](task-setup-and-requirements.md)
+* [Oracles](task-setup-and-requirements-1.md)
 
 ## Tasks
 
