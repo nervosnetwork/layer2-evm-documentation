@@ -13,8 +13,7 @@
 * [6. Use Force Bridge to Deposit Tokens on Ethereum to Polyjuice](tasks/6.use.force.bridge.to.deposit.md)
 * [7. Port an Existing Ethereum dApp to Polyjuice](tasks/7.port.eth.dapp.md)
 * [8. Modify the Ported dApp so it Supports Ethereum Assets via Force Bridge](tasks/8.modify.dapp.support.force.bridge.md)
-* [9. Initiate a Withdrawal From Layer 2 Back to Layer 1](tasks/9.withdraw.md)
-* [10. Complete Withdrawal Process by Unlocking the Funds](tasks/10.unlock.md)
+* [9. Withdraw From Layer 2 Back to Layer 1](tasks/9.withdraw.md)
 
 ## Concept Explainers
 
