@@ -4,6 +4,10 @@ description: Here you can find existing oracles' infrastructure information.
 
 # Oracles
 
+## Introduction
+
+Oracle is external smart-contract used to provide offchain data to onchain applications. Below you can find Nervos ecosystem oracle partners that have already deployed their contracts along with documentation.
+
 ## Band
 
 1. StdReference address (Godwoken Testnet v1): 0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68
