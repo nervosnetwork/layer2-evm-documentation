@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@ckb-lumos/base": "0.18.0-rc1",
-    "@lay2/pw-core": "0.4.0-alpha.13",
+    "@lay2/pw-core": "kuzirashi/pw-core.git#79b200743bab16f0638b37c57a8d8775d92b1050",
     "@polyjuice-provider/base": "0.1.1",
     "ckb-js-toolkit": "0.10.2",
     "nervos-godwoken-integration": "0.4.1",
