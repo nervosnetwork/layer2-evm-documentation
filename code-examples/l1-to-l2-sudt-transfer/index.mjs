@@ -100,7 +100,7 @@ async function waitUntilCommitted(txHash, rpc, timeout = 18) {
     defaultCollectorOptions: {
       lockType: LockType.pw
     },
-    changeCellLockType: LockType.pw
+    senderLockType: LockType.pw
   };
 
   console.log(`SUDT balance: ${sudtBalance}`);

@@ -582,9 +582,9 @@
     "@ethersproject/properties" "^5.4.0"
     "@ethersproject/strings" "^5.4.0"
 
-"@lay2/pw-core@^0.4.0-alpha.8", "@lay2/pw-core@kuzirashi/pw-core.git#79b200743bab16f0638b37c57a8d8775d92b1050":
+"@lay2/pw-core@^0.4.0-alpha.8", "@lay2/pw-core@jordanmack/pw-core.git#6989bbba40255ed1e130c97988427444702c19c7":
   version "0.4.0-alpha.13"
-  resolved "https://codeload.github.com/kuzirashi/pw-core/tar.gz/79b200743bab16f0638b37c57a8d8775d92b1050"
+  resolved "https://codeload.github.com/jordanmack/pw-core/tar.gz/6989bbba40255ed1e130c97988427444702c19c7"
   dependencies:
     "@nervosnetwork/ckb-sdk-utils" "0.102.3"
     "@scatterjs/core" "^2.7.54"
