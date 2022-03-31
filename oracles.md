@@ -10,9 +10,10 @@ Oracle is external smart-contract used to provide offchain data to onchain appli
 
 ## Band
 
-1. StdReference address (Godwoken Testnet v1): [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://v1.aggron.gwscan.com/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)
-2. Documentation: [https://docs.bandchain.org/band-standard-dataset/using-band-dataset/using-band-dataset-evm.html](https://docs.bandchain.org/band-standard-dataset/using-band-dataset/using-band-dataset-evm.html)&#x20;
-3. More information: [https://bandprotocol.com/](https://bandprotocol.com)
+1. [StdReferenceProxy](https://github.com/bandprotocol/bandchain/blob/069954f80b327ff25672853a3c43737aa90207b1/bridges/evm/contracts/stdref/StdReferenceProxy.sol) address (Godwoken Testnet v1): [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://v1.aggron.gwscan.com/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68) - this address should be used for getting prices.
+2. [StdReferenceBasic](https://github.com/bandprotocol/bandchain/blob/069954f80b327ff25672853a3c43737aa90207b1/bridges/evm/contracts/stdref/StdReferenceBasic.sol) address (Godwoken Testnet v1): [0xdE2022A8aB68AE86B0CD3Ba5EFa10AaB859d0293](https://v1.aggron.gwscan.com/address/0xdE2022A8aB68AE86B0CD3Ba5EFa10AaB859d0293) - this address is emitting RefDataUpdate events if you need them for blockchain indexing.
+3. Documentation: [https://docs.bandchain.org/band-standard-dataset/using-band-dataset/using-band-dataset-evm.html](https://docs.bandchain.org/band-standard-dataset/using-band-dataset/using-band-dataset-evm.html)&#x20;
+4. More information: [https://bandprotocol.com/](https://bandprotocol.com)
 
 ## DIA
 
