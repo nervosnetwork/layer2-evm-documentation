@@ -12,4 +12,4 @@ All of this is made possible by the extreme flexibility of the underlying Nervos
 
 The Nervos ecosystem is still growing and there are a number of pieces of infrastructure that are currently in active development. Not everything is ready to be used today. In our tasks, we will guide you through the pieces that are available for testing now, and will be ready for a production environment soon. This will give you the opportunity to get a head start on familiarizing yourself with how EVM dApps are built on Nervos. Once the infrastructure is ready, you'll be first in line to release your dApp to the users of Nervos, and to the users of any blockchain platform that is connected to Nervos.
 
-If you get stuck on any of the tasks, feel free to send out a message on [Nervos' Discord server](https://discord.gg/AqGTUE9). We'll be available to help you work through any problems you may have. Good luck!
+If you get stuck on any of the tasks, feel free to send out a message on [Nervos' Discord server](https://discord.gg/nervos) (look for #dev-chat channel). We'll be available to help you work through any problems you may have. Good luck!
