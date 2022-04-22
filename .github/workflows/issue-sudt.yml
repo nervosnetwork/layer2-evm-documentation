@@ -1,0 +1,136 @@
+name: Issue sUDT
+
+on: push
+
+env:
+  GODWOKEN_WEB3_RPC: https://godwoken-testnet-web3-v1-rpc.ckbapp.dev
+  CKB_TESTNET_RPC: http://3.235.223.161:18114
+  CKB_TESTNET_INDEXER: http://3.235.223.161:18116
+
+jobs:
+  issue-sudt:
+    runs-on: ubuntu-latest
+
+    steps:
+    # https://github.com/actions/checkout
+    - uses: actions/checkout@v3
+
+    - name: Checkout sudt-cli repo
+      uses: actions/checkout@v3
+      with:
+        repository: jordanmack/sudt-cli
+        path: tools/sudt-cli
+
+    - name: Checkout godwoken-examples
+      uses: actions/checkout@v3
+      with:
+        repository: Kuzirashi/godwoken-examples
+        path: tools/examples
+        ref: testnet-script
+
+    - uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    ###
+    # docs: https://nervos.gitbook.io/layer-2-evm/tasks/4.issue.sudt.deposit
+    # Note: Your private keys are used to secure your accounts and all the funds
+    # and assets contained within. It is important to keep your private keys
+    # safe, and to only use them with tools you can trust.
+    #
+    # However, on these tasks we will only be working with Testnet funds and
+    # assets that have no value. You can operate without concern knowing that
+    # there is nothing at risk.
+
+
+    # https://nervos.gitbook.io/layer-2-evm/component-tutorials/2.issue.sudt.cli
+    - name: Setup sudt-cli
+      working-directory: tools/sudt-cli
+      run: |
+        npm install
+        npm run compile
+        chmod 755 ./bin/sudt-cli
+        ./bin/sudt-cli --help
+    - name: Mint an SUDT Using the SUDT-CLI Command-Line Tool
+      working-directory: tools/sudt-cli
+      run: |
+        ./bin/sudt-cli issue \
+          --private-key 0x79682c20bbcaf7fcf18eb0c69b133c872227ceb88971090e7f2242c80cd54d18 \
+          --amount 100
+    - name: Check the sUDT balance of the above address
+      working-directory: tools/sudt-cli
+      run: |
+        ./bin/sudt-cli balance \
+          --issuer-lock-hash 0x5c7253696786b9eddd34e4f6b6e478ec5742bd36569ec60c1d0487480ba4f9e3 \
+          --network-type testnet \
+          --address ckt1qyq9u5vzgtklnqrr6cevra7w2utrsxmjgefs72sfju
+
+    # https://nervos.gitbook.io/layer-2-evm/component-tutorials/3.setup.and.use.account.cli
+    - name: Setup the tool package in godwoken-examples
+      working-directory: tools/examples
+      run: |
+        yarn
+        yarn build-all
+        yarn generate-testnet-configs
+        cat packages/tools/configs/scripts-deploy-result.json
+        cat packages/tools/configs/godwoken-config.json
+    - name: Deposit Layer 1 SUDT Tokens to Layer 2
+      working-directory: tools/examples
+      run: |
+        node ./packages/tools/lib/account-cli.js \
+          --godwoken-rpc ${{ env.GODWOKEN_WEB3_RPC }} \
+            deposit-sudt \
+              --private-key 0x79682c20bbcaf7fcf18eb0c69b133c872227ceb88971090e7f2242c80cd54d18 \
+              --capacity 50020220422 \
+              --sudt-script-args 0x5c7253696786b9eddd34e4f6b6e478ec5742bd36569ec60c1d0487480ba4f9e3 \
+              --amount 20 \
+              --rpc ${{ env.CKB_TESTNET_RPC }} \
+              --indexer ${{ env.CKB_TESTNET_INDEXER }} \
+        echo "The Godwoken deposit address of EOA (0x8291507afda0bba820efb6dfa339f09c9465215c):\n"
+        echo https://explorer.nervos.org/aggron/address/ckt1qrxzkns56l07k8nj7acg4skh7cm2ug3tqqa6c67vlnu0fhltm8r3gq2fgqjx7950gyry98wxgxkaxwq6gj67aas7wa2pgt6ef6vxvud9wkssqqqqzqqqqqpsqqqqpxgqqqq9cujnd9ncdw0dm56wfa4ku3uwc46zh5m9d8kxpswsfp6gpwj0ncmfqqqqqyqqqqqrqqqqqqcsqqqqzpt3lyg88lwrehh5mkkeddpqfhfs6c6470w6nfkhls86qvnyprdqzdqqqqqyjspydutg7sgxg2wuvsdd6vup5394ammpua65zsh4jn5cvec62avzj9g84ldqhw5zpmakm73nnuyuj3jjzhqq5vpqqqqqqrqqh34n8r
+        echo "================================================================="
+
+        node ./packages/tools/lib/account-cli.js \
+          --godwoken-rpc ${{ env.GODWOKEN_WEB3_RPC }} \
+            deposit-sudt \
+              --private-key 0x79682c20bbcaf7fcf18eb0c69b133c872227ceb88971090e7f2242c80cd54d18 \
+              --capacity 50020220422 \
+              --sudt-script-args 0x5c7253696786b9eddd34e4f6b6e478ec5742bd36569ec60c1d0487480ba4f9e3 \
+              --amount 20 \
+              --rpc ${{ env.CKB_TESTNET_RPC }} \
+              --indexer ${{ env.CKB_TESTNET_INDEXER }} \
+              --eth-address 0x0c1efcca2bcb65a532274f3ef24c044ef4ab6d73
+        echo "The Godwoken deposit address of EOA (0x0c1efcca2bcb65a532274f3ef24c044ef4ab6d73):"
+        echo https://explorer.nervos.org/aggron/address/ckt1qrxzkns56l07k8nj7acg4skh7cm2ug3tqqa6c67vlnu0fhltm8r3gq2fgqjx7950gyry98wxgxkaxwq6gj67aas7wa2pgt6ef6vxvud9wkssqqqqzqqqqqpsqqqqpxgqqqq9cujnd9ncdw0dm56wfa4ku3uwc46zh5m9d8kxpswsfp6gpwj0ncmfqqqqqyqqqqqrqqqqqqcsqqqqzpt3lyg88lwrehh5mkkeddpqfhfs6c6470w6nfkhls86qvnyprdqzdqqqqqyjspydutg7sgxg2wuvsdd6vup5394ammpua65zsh4jn5cvec62agvrm7v527tvkjnyf608meycpzw7j4k6ucq5vpqqqqqqrqqtgpt3q
+        echo "================================================================="
+
+        node ./packages/tools/lib/account-cli.js \
+          --godwoken-rpc ${{ env.GODWOKEN_WEB3_RPC }} \
+            deposit-sudt \
+              --private-key 0x79682c20bbcaf7fcf18eb0c69b133c872227ceb88971090e7f2242c80cd54d18 \
+              --capacity 50020220422 \
+              --sudt-script-args 0x5c7253696786b9eddd34e4f6b6e478ec5742bd36569ec60c1d0487480ba4f9e3 \
+              --amount 20 \
+              --rpc ${{ env.CKB_TESTNET_RPC }} \
+              --indexer ${{ env.CKB_TESTNET_INDEXER }} \
+              --eth-address 0xE802b671367Dd060b89f518217e732F7c74025f5
+        echo "The Godwoken deposit address of EOA (0xE802b671367Dd060b89f518217e732F7c74025f5):\n"
+        echo https://explorer.nervos.org/aggron/address/ckt1qrxzkns56l07k8nj7acg4skh7cm2ug3tqqa6c67vlnu0fhltm8r3gq2fgqjx7950gyry98wxgxkaxwq6gj67aas7wa2pgt6ef6vxvud9wkssqqqqzqqqqqpsqqqqpxgqqqq9cujnd9ncdw0dm56wfa4ku3uwc46zh5m9d8kxpswsfp6gpwj0ncmfqqqqqyqqqqqrqqqqqqcsqqqqzpt3lyg88lwrehh5mkkeddpqfhfs6c6470w6nfkhls86qvnyprdqzdqqqqqyjspydutg7sgxg2wuvsdd6vup5394ammpua65zsh4jn5cvec62a0gq2m8zdna6pst3863sgt7wvhhcaqztagq5vpqqqqqqrqqg2zmm8
+        echo "================================================================="
+
+        node ./packages/tools/lib/account-cli.js \
+          --godwoken-rpc ${{ env.GODWOKEN_WEB3_RPC }} \
+            deposit-sudt \
+              --private-key 0x79682c20bbcaf7fcf18eb0c69b133c872227ceb88971090e7f2242c80cd54d18 \
+              --capacity 50020220422 \
+              --sudt-script-args 0x5c7253696786b9eddd34e4f6b6e478ec5742bd36569ec60c1d0487480ba4f9e3 \
+              --amount 20 \
+              --rpc ${{ env.CKB_TESTNET_RPC }} \
+              --indexer ${{ env.CKB_TESTNET_INDEXER }} \
+              --eth-address 0x56a079B315dAeBD310BA9A8B45a1302856b2AA70
+        echo "The Godwoken deposit address of EOA (0x56a079B315dAeBD310BA9A8B45a1302856b2AA70):\n"
+        echo https://explorer.nervos.org/aggron/address/ckt1qrxzkns56l07k8nj7acg4skh7cm2ug3tqqa6c67vlnu0fhltm8r3gq2fgqjx7950gyry98wxgxkaxwq6gj67aas7wa2pgt6ef6vxvud9wkssqqqqzqqqqqpsqqqqpxgqqqq9cujnd9ncdw0dm56wfa4ku3uwc46zh5m9d8kxpswsfp6gpwj0ncmfqqqqqyqqqqqrqqqqqqcsqqqqzpt3lyg88lwrehh5mkkeddpqfhfs6c6470w6nfkhls86qvnyprdqzdqqqqqyjspydutg7sgxg2wuvsdd6vup5394ammpua65zsh4jn5cvec62a2k5pumx9w6a0f3pw563dz6zvpg26e25uqq5vpqqqqqqrqqn4n40r
+        echo "================================================================="
