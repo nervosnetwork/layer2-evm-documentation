@@ -3,10 +3,10 @@ const Web3 = require('web3');
 
 const CompiledContractArtifact = require(`./artifacts/contracts/SudtERC20Proxy.sol/ERC20.json`);
 
-const ACCOUNT_PRIVATE_KEY = '<YOUR_ETHEREUM_PRIVATE_KEY>'; // Replace this with your Ethereum private key with funds on Layer 2.
-const SUDT_ID = '<YOUR_SUDT_ID>'; // Replace this with SUDT ID received from depositing SUDT to Layer 2. This should be a number.
-const SUDT_NAME = 'MyToken';
-const SUDT_SYMBOL = 'MTK';
+const ACCOUNT_PRIVATE_KEY = process.env.ACCOUNT_PRIVATE_KEY || '<YOUR_ETHEREUM_PRIVATE_KEY>'; // Replace this with your Ethereum private key with funds on Layer 2.
+const SUDT_ID = process.env.SUDT_ID || '<YOUR_SUDT_ID>'; // Replace this with SUDT ID received from depositing SUDT to Layer 2. This should be a number.
+const SUDT_NAME = process.env.SUDT_NAME || 'MyToken';
+const SUDT_SYMBOL = process.env.SUDT_SYMBOL || 'MTK';
 const SUDT_TOTAL_SUPPLY = 9999999999;
 const SUDT_DECIMALS = 18; // Make sure this matches your token! Eg. for ckETH it is 18.
 

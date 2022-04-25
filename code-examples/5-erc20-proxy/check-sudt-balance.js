@@ -1,7 +1,7 @@
 const { ethers } = require('hardhat');
 
-const ETHEREUM_ADDRESS = '<YOUR_ETHEREUM_ADDRESS>';
-const SUDT_PROXY_CONTRACT_ADDRESS = '<YOUR_SUDT_PROXY_CONTRACT_ADDRESS>';
+const ETHEREUM_ADDRESS = process.env.ETHEREUM_ADDRESS || '<YOUR_ETHEREUM_ADDRESS>';
+const SUDT_PROXY_CONTRACT_ADDRESS = process.env.SUDT_PROXY_CONTRACT_ADDRESS || '<YOUR_SUDT_PROXY_CONTRACT_ADDRESS>';
 
 (async () => {
     console.log(`Using Ethereum address: ${ETHEREUM_ADDRESS}`);
