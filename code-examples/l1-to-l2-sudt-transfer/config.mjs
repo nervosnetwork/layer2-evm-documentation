@@ -1,5 +1,5 @@
 export const GODWOKEN_RPC_URL =
-  "https://godwoken-testnet-web3-v1-rpc.ckbapp.dev";
+  "https://godwoken-testnet-v1.ckbapp.dev";
 
 export async function getPolyjuiceConfig() {
   return {

@@ -3,7 +3,7 @@ name: sUDT ERC20 Proxy
 on: push
 
 env:
-  GODWOKEN_WEB3_RPC: https://godwoken-testnet-web3-v1-rpc.ckbapp.dev
+  GODWOKEN_WEB3_RPC: https://godwoken-testnet-v1.ckbapp.dev
   SUDT_ID: 11243
   ETHEREUM_ADDRESS: '0x890616016250e494F2dA742496C8Ec491546525f'
   TEST_PK: '0x312cc03561e296419275905e25c1e9deb90fcec74c91abae1f65588d2f105c05'

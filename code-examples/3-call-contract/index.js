@@ -13,7 +13,7 @@ const ACCOUNT_PRIVATE_KEY = '<YOUR_ETHEREUM_PRIVATE_KEY>'; // Replace this with 
 const CONTRACT_ABI = [<YOUR_CONTRACT_ABI>]; // this should be an Array []
 const CONTRACT_ADDRESS = '<YOUR_CONTRACT_ADDRESS>';
 
-const web3 = new Web3('https://godwoken-testnet-web3-v1-rpc.ckbapp.dev');
+const web3 = new Web3('https://godwoken-testnet-v1.ckbapp.dev');
 
 const account = web3.eth.accounts.wallet.add(ACCOUNT_PRIVATE_KEY);
 

@@ -3,7 +3,7 @@ name: Issue sUDT
 on: push
 
 env:
-  GODWOKEN_WEB3_RPC: https://godwoken-testnet-web3-v1-rpc.ckbapp.dev
+  GODWOKEN_WEB3_RPC: https://godwoken-testnet-v1.ckbapp.dev
   CKB_TESTNET_RPC: http://3.235.223.161:18114
   CKB_TESTNET_INDEXER: http://3.235.223.161:18116
 

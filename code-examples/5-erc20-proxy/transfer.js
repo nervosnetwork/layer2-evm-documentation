@@ -13,7 +13,7 @@ const SUDT_DECIMALS = '<SUDT_DECIMALS>';
 const SUDT_TOTAL_SUPPLY = 9999999999;
 const TRANSFER_AMOUNT = 1;
 
-const web3 = new Web3('https://godwoken-testnet-web3-v1-rpc.ckbapp.dev');
+const web3 = new Web3('https://godwoken-testnet-v1.ckbapp.dev');
 
 web3.eth.accounts.wallet.add(SENDER_PRIVATE_KEY);
 

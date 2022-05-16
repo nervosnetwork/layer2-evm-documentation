@@ -10,7 +10,7 @@ const SUDT_SYMBOL = process.env.SUDT_SYMBOL || 'MTK';
 const SUDT_TOTAL_SUPPLY = 9999999999;
 const SUDT_DECIMALS = 18; // Make sure this matches your token! Eg. for ckETH it is 18.
 
-const web3 = new Web3('https://godwoken-testnet-web3-v1-rpc.ckbapp.dev');
+const web3 = new Web3('https://godwoken-testnet-v1.ckbapp.dev');
 
 const account = web3.eth.accounts.wallet.add(ACCOUNT_PRIVATE_KEY);
 
