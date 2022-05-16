@@ -15,5 +15,7 @@ const SUDT_PROXY_CONTRACT_ADDRESS = process.env.SUDT_PROXY_CONTRACT_ADDRESS || '
     const provider = new ethers.providers.JsonRpcProvider('https://godwoken-testnet-v1.ckbapp.dev');
     const contract = (await ethers.getContractFactory('ERC20')).attach(SUDT_PROXY_CONTRACT_ADDRESS).connect(provider);
 
-    console.log(await contract.callStatic.balanceOf(ETHEREUM_ADDRESS));
+    console.log(await contract.callStatic.balanceOf(ETHEREUM_ADDRESS, {
+        gasLimit: 10000000
+    }));
 })();
