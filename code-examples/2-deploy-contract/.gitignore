@@ -1,4 +1,4 @@
 artifacts
+build
 cache
 node_modules
-build/contracts/*
