@@ -7,10 +7,10 @@
 Clone:
 
 ```
-git clone https://github.com/Kuzirashi/scaffold-eth.git -b fix/subgraph-godwoken-testnet
+git clone https://github.com/nervosnetwork/scaffold-eth
 ```
 
-Create .env file based on .sample.env and uncomment provider URL:
+Create .env file based on .sample.env and uncomment provider URL in packages/react-app:
 
 ```
 REACT_APP_PROVIDER=https://godwoken-testnet-v1.ckbapp.dev
