@@ -16,6 +16,7 @@
 
 * [Block Explorers](ecosystem/block-explorers.md)
 * [Oracles](ecosystem/oracles.md)
+* [Project Templates](ecosystem/block-explorers-1.md)
 
 ## Concept Explainers
 
