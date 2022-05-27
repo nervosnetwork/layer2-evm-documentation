@@ -4,7 +4,7 @@ on: push
 
 env:
   GODWOKEN_WEB3_RPC: https://godwoken-testnet-v1.ckbapp.dev
-  SUDT_ID: 11243
+  SUDT_ID: 6571
   ETHEREUM_ADDRESS: '0x890616016250e494F2dA742496C8Ec491546525f'
   TEST_PK: '0x312cc03561e296419275905e25c1e9deb90fcec74c91abae1f65588d2f105c05'
 
@@ -15,6 +15,11 @@ jobs:
     steps:
     # https://github.com/actions/checkout
     - uses: actions/checkout@v3
+      with:
+        repository: Flouse/layer2-evm-documentation
+        # https://github.com/Flouse/layer2-evm-documentation/commits/test-sudt-erc20-proxy-contract
+        ref: 'test-sudt-erc20-proxy-contract'
+
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"

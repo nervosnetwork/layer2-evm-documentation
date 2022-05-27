@@ -24,9 +24,9 @@ jobs:
     - name: Checkout godwoken-examples
       uses: actions/checkout@v3
       with:
-        repository: Kuzirashi/godwoken-examples
+        repository: Flouse/godwoken-examples
         path: tools/examples
-        ref: testnet-script
+        ref: gw-v1.1
 
     - uses: actions/cache@v3
       with:
@@ -36,7 +36,7 @@ jobs:
           ${{ runner.os }}-node-
 
     ###
-    # docs: https://nervos.gitbook.io/layer-2-evm/tasks/4.issue.sudt.deposit
+    # docs: https://github.com/nervosnetwork/layer2-evm-documentation/blob/c12cf20c05/tasks/4.issue.sudt.deposit.md
     # Note: Your private keys are used to secure your accounts and all the funds
     # and assets contained within. It is important to keep your private keys
     # safe, and to only use them with tools you can trust.
@@ -46,7 +46,7 @@ jobs:
     # there is nothing at risk.
 
 
-    # https://nervos.gitbook.io/layer-2-evm/component-tutorials/2.issue.sudt.cli
+    # https://github.com/nervosnetwork/layer2-evm-documentation/blob/c12cf20c05/component-tutorials/2.issue.sudt.cli.md
     - name: Setup sudt-cli
       working-directory: tools/sudt-cli
       run: |
@@ -72,11 +72,7 @@ jobs:
     - name: Setup the tool package in godwoken-examples
       working-directory: tools/examples
       run: |
-        yarn
-        yarn build-all
-        yarn generate-testnet-configs
-        cat packages/tools/configs/scripts-deploy-result.json
-        cat packages/tools/configs/godwoken-config.json
+        yarn && yarn build-godwoken && yarn build-tools
     - name: Deposit Layer 1 SUDT Tokens to Layer 2
       working-directory: tools/examples
       run: |
@@ -89,8 +85,8 @@ jobs:
               --amount 20 \
               --rpc ${{ env.CKB_TESTNET_RPC }} \
               --indexer ${{ env.CKB_TESTNET_INDEXER }} \
-        echo "The Godwoken deposit address of EOA (0x8291507afda0bba820efb6dfa339f09c9465215c):\n"
-        echo https://explorer.nervos.org/aggron/address/ckt1qrxzkns56l07k8nj7acg4skh7cm2ug3tqqa6c67vlnu0fhltm8r3gq2fgqjx7950gyry98wxgxkaxwq6gj67aas7wa2pgt6ef6vxvud9wkssqqqqzqqqqqpsqqqqpxgqqqq9cujnd9ncdw0dm56wfa4ku3uwc46zh5m9d8kxpswsfp6gpwj0ncmfqqqqqyqqqqqrqqqqqqcsqqqqzpt3lyg88lwrehh5mkkeddpqfhfs6c6470w6nfkhls86qvnyprdqzdqqqqqyjspydutg7sgxg2wuvsdd6vup5394ammpua65zsh4jn5cvec62avzj9g84ldqhw5zpmakm73nnuyuj3jjzhqq5vpqqqqqqrqqh34n8r
+        echo "The Godwoken deposit address of EOA (0x8291507afda0bba820efb6dfa339f09c9465215c):"
+        echo https://pudge.explorer.nervos.org/address/ckt1qpg8qjuyaj6vfvftg0r6evnqmhtfzuwzrdxqhg2l83rfklg58ah3sqtsydv75lc8x4vfy844pkxpcalf9amqerux2677fx2ly6ufv03dmz5sqqqqzsqqqqp5qqqqp8gqqqq22qqqqpw8y5mfv7rtnmwaxnj0ddhy0rk9ws4axetfa3svr5zgwjqt5nu7x6gqqqqpqqqqqqcqqqqqxyqqqqq82gws428xdm6yr67rzgzds6aj8lyra8kutrqemwcmp6lxgvmwcqqngqqqqpczxk020urn2kyjr66smrquwl5j7asv37r9d00yn90jdwyk8cka3q532pa0mg9m4qswldkl5vulp8y5v5s4eqf6pyqqqqqqcqpqqqqq3ahnd7
         echo "================================================================="
 
         node ./packages/tools/lib/account-cli.js \
@@ -104,7 +100,7 @@ jobs:
               --indexer ${{ env.CKB_TESTNET_INDEXER }} \
               --eth-address 0x0c1efcca2bcb65a532274f3ef24c044ef4ab6d73
         echo "The Godwoken deposit address of EOA (0x0c1efcca2bcb65a532274f3ef24c044ef4ab6d73):"
-        echo https://explorer.nervos.org/aggron/address/ckt1qrxzkns56l07k8nj7acg4skh7cm2ug3tqqa6c67vlnu0fhltm8r3gq2fgqjx7950gyry98wxgxkaxwq6gj67aas7wa2pgt6ef6vxvud9wkssqqqqzqqqqqpsqqqqpxgqqqq9cujnd9ncdw0dm56wfa4ku3uwc46zh5m9d8kxpswsfp6gpwj0ncmfqqqqqyqqqqqrqqqqqqcsqqqqzpt3lyg88lwrehh5mkkeddpqfhfs6c6470w6nfkhls86qvnyprdqzdqqqqqyjspydutg7sgxg2wuvsdd6vup5394ammpua65zsh4jn5cvec62agvrm7v527tvkjnyf608meycpzw7j4k6ucq5vpqqqqqqrqqtgpt3q
+        echo https://pudge.explorer.nervos.org/address/ckt1qpg8qjuyaj6vfvftg0r6evnqmhtfzuwzrdxqhg2l83rfklg58ah3sqtsydv75lc8x4vfy844pkxpcalf9amqerux2677fx2ly6ufv03dmz5sqqqqzsqqqqp5qqqqp8gqqqq22qqqqpw8y5mfv7rtnmwaxnj0ddhy0rk9ws4axetfa3svr5zgwjqt5nu7x6gqqqqpqqqqqqcqqqqqxyqqqqq82gws428xdm6yr67rzgzds6aj8lyra8kutrqemwcmp6lxgvmwcqqngqqqqpczxk020urn2kyjr66smrquwl5j7asv37r9d00yn90jdwyk8ckasrq7ln9zhjm955ezwne77fxqgnh54dkh8qf6pyqqqqqqcqpqqqqq93zn05
         echo "================================================================="
 
         node ./packages/tools/lib/account-cli.js \
@@ -117,8 +113,8 @@ jobs:
               --rpc ${{ env.CKB_TESTNET_RPC }} \
               --indexer ${{ env.CKB_TESTNET_INDEXER }} \
               --eth-address 0xE802b671367Dd060b89f518217e732F7c74025f5
-        echo "The Godwoken deposit address of EOA (0xE802b671367Dd060b89f518217e732F7c74025f5):\n"
-        echo https://explorer.nervos.org/aggron/address/ckt1qrxzkns56l07k8nj7acg4skh7cm2ug3tqqa6c67vlnu0fhltm8r3gq2fgqjx7950gyry98wxgxkaxwq6gj67aas7wa2pgt6ef6vxvud9wkssqqqqzqqqqqpsqqqqpxgqqqq9cujnd9ncdw0dm56wfa4ku3uwc46zh5m9d8kxpswsfp6gpwj0ncmfqqqqqyqqqqqrqqqqqqcsqqqqzpt3lyg88lwrehh5mkkeddpqfhfs6c6470w6nfkhls86qvnyprdqzdqqqqqyjspydutg7sgxg2wuvsdd6vup5394ammpua65zsh4jn5cvec62a0gq2m8zdna6pst3863sgt7wvhhcaqztagq5vpqqqqqqrqqg2zmm8
+        echo "The Godwoken deposit address of EOA (0xE802b671367Dd060b89f518217e732F7c74025f5):"
+        echo https://pudge.explorer.nervos.org/address/ckt1qpg8qjuyaj6vfvftg0r6evnqmhtfzuwzrdxqhg2l83rfklg58ah3sqtsydv75lc8x4vfy844pkxpcalf9amqerux2677fx2ly6ufv03dmz5sqqqqzsqqqqp5qqqqp8gqqqq22qqqqpw8y5mfv7rtnmwaxnj0ddhy0rk9ws4axetfa3svr5zgwjqt5nu7x6gqqqqpqqqqqqcqqqqqxyqqqqq82gws428xdm6yr67rzgzds6aj8lyra8kutrqemwcmp6lxgvmwcqqngqqqqpczxk020urn2kyjr66smrquwl5j7asv37r9d00yn90jdwyk8cka36qzkecnvlwsvzuf75vzzlnn9a78gqjltqf6pyqqqqqqcqpqqqqqprmxxg
         echo "================================================================="
 
         node ./packages/tools/lib/account-cli.js \
@@ -131,6 +127,6 @@ jobs:
               --rpc ${{ env.CKB_TESTNET_RPC }} \
               --indexer ${{ env.CKB_TESTNET_INDEXER }} \
               --eth-address 0x56a079B315dAeBD310BA9A8B45a1302856b2AA70
-        echo "The Godwoken deposit address of EOA (0x56a079B315dAeBD310BA9A8B45a1302856b2AA70):\n"
-        echo https://explorer.nervos.org/aggron/address/ckt1qrxzkns56l07k8nj7acg4skh7cm2ug3tqqa6c67vlnu0fhltm8r3gq2fgqjx7950gyry98wxgxkaxwq6gj67aas7wa2pgt6ef6vxvud9wkssqqqqzqqqqqpsqqqqpxgqqqq9cujnd9ncdw0dm56wfa4ku3uwc46zh5m9d8kxpswsfp6gpwj0ncmfqqqqqyqqqqqrqqqqqqcsqqqqzpt3lyg88lwrehh5mkkeddpqfhfs6c6470w6nfkhls86qvnyprdqzdqqqqqyjspydutg7sgxg2wuvsdd6vup5394ammpua65zsh4jn5cvec62a2k5pumx9w6a0f3pw563dz6zvpg26e25uqq5vpqqqqqqrqqn4n40r
+        echo "The Godwoken deposit address of EOA (0x56a079B315dAeBD310BA9A8B45a1302856b2AA70):"
+        echo https://pudge.explorer.nervos.org/address/ckt1qpg8qjuyaj6vfvftg0r6evnqmhtfzuwzrdxqhg2l83rfklg58ah3sqtsydv75lc8x4vfy844pkxpcalf9amqerux2677fx2ly6ufv03dmz5sqqqqzsqqqqp5qqqqp8gqqqq22qqqqpw8y5mfv7rtnmwaxnj0ddhy0rk9ws4axetfa3svr5zgwjqt5nu7x6gqqqqpqqqqqqcqqqqqxyqqqqq82gws428xdm6yr67rzgzds6aj8lyra8kutrqemwcmp6lxgvmwcqqngqqqqpczxk020urn2kyjr66smrquwl5j7asv37r9d00yn90jdwyk8ckas44q0xe3tkht6vgt4x5tgksnq2zkk248pqf6pyqqqqqqcqpqqqqq28020y
         echo "================================================================="
