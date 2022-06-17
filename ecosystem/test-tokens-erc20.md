@@ -1,3 +1,9 @@
+---
+description: >-
+  On this page you can find test tokens deployed on Godwoken Testnet that you
+  can use to experiment.
+---
+
 # Test Tokens (ERC20)
 
 ### ERC20
