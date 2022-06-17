@@ -17,6 +17,7 @@
 * [Block Explorers](ecosystem/block-explorers.md)
 * [Oracles](ecosystem/oracles.md)
 * [Project Templates](ecosystem/project-templates.md)
+* [Test Tokens (ERC20)](ecosystem/test-tokens-erc20.md)
 
 ## Concept Explainers
 
