@@ -19,7 +19,7 @@
 * [Oracles](ecosystem/oracles.md)
 * [Other Tools](ecosystem/other-tools.md)
 * [Project Templates](ecosystem/project-templates.md)
-* [Test Tokens (ERC20)](ecosystem/test-tokens-erc20.md)
+* [Tokens](ecosystem/tokens.md)
 
 ## Concept Explainers
 
