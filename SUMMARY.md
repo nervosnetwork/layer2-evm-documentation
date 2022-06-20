@@ -15,6 +15,7 @@
 ## Ecosystem
 
 * [Block Explorers](ecosystem/block-explorers.md)
+* [Blockchain Indexer (graph-node)](ecosystem/blockchain-indexer-graph-node.md)
 * [Oracles](ecosystem/oracles.md)
 * [Project Templates](ecosystem/project-templates.md)
 * [Test Tokens (ERC20)](ecosystem/test-tokens-erc20.md)
