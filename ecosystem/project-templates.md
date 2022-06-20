@@ -2,7 +2,7 @@
 
 ## Scaffold Eth
 
-![](<../.gitbook/assets/image (8).png>)
+![](<../.gitbook/assets/image (8) (1).png>)
 
 Clone:
 
@@ -46,4 +46,4 @@ yarn graph-ship-local
 
 Your events should be shown now after blockchain transactions are confirmed:
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (8).png>)

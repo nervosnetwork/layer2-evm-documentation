@@ -33,3 +33,4 @@
 ## Component Tutorials
 
 * [Extracting a Private Key from MetaMask Wallet](component-tutorials/5.extract.ethereum.private.key.md)
+* [Fast Withdrawal from Version 0 to Version 1](component-tutorials/fast-withdrawal-from-version-0-to-version-1.md)
