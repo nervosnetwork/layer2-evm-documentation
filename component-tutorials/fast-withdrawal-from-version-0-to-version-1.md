@@ -4,9 +4,9 @@
 
 This tutorial shows how to withdraw funds from old Godwoken - version 0 - to the new network - version 1. If you don't have any funds on old network you should skip this article.
 
-This guide will show you how to do **Fast Withdrawal which takes minutes** instead of days and transfer funds from old Layer 2 EVM Godwoken network to the new Godwoken.
+This guide will show you how to do **Fast Withdrawal,** which **takes minutes** instead of days and transfer funds from old Layer 2 EVM Godwoken network to the new Godwoken.
 
-If you wish to withdraw funds from Godwoken V0 to Nervos Layer 1 then it will be a slow process (days) due to Optimistic Rollup security architecture. This guide also doesn't cover this process.
+If you wish to withdraw funds from Godwoken V0 to Nervos Layer 1 then it will be a slower process (days) due to Optimistic Rollup security architecture. This guide doesn't cover that.
 
 For additional information regarding the [Godwoken Bridge](https://testnet.bridge.godwoken.io) you can check [docs.godwoken.io](https://docs.godwoken.io/godwokenbridge).
 
@@ -34,7 +34,7 @@ For additional information regarding the [Godwoken Bridge](https://testnet.bridg
 
 6\. Press "Request Withdrawal" button.
 
-![](<../.gitbook/assets/image (12).png>)
+![](<../.gitbook/assets/image (13).png>)
 
 Estimated confirmation time is few minutes.
 
