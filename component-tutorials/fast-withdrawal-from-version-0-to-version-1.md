@@ -14,11 +14,11 @@ For additional information regarding the [Godwoken Bridge](https://testnet.bridg
 
 1. Go to [https://testnet.bridge.godwoken.io/#/v0](https://testnet.bridge.godwoken.io/#/v0) and make sure that in top-right you have "Godwoken V0" network selected:
 
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (9) (1).png>)
 
 2\. Switch to "Withdrawal" view:
 
-![](<../.gitbook/assets/image (10).png>)
+![](<../.gitbook/assets/image (10) (1).png>)
 
 3\. Click "Connect" button to connect MetaMask account. Make sure it has funds on Godwoken V0.
 
@@ -34,7 +34,7 @@ For additional information regarding the [Godwoken Bridge](https://testnet.bridg
 
 6\. Press "Request Withdrawal" button.
 
-![](<../.gitbook/assets/image (13).png>)
+![](<../.gitbook/assets/image (13) (1).png>)
 
 Estimated confirmation time is few minutes.
 
