@@ -18,7 +18,7 @@ For additional information regarding the [Godwoken Bridge](https://testnet.bridg
 
 2\. Switch to "Withdrawal" view:
 
-![](<../.gitbook/assets/image (10) (1).png>)
+![](<../.gitbook/assets/image (10) (1) (1).png>)
 
 3\. Click "Connect" button to connect MetaMask account. Make sure it has funds on Godwoken V0.
 
@@ -34,7 +34,7 @@ For additional information regarding the [Godwoken Bridge](https://testnet.bridg
 
 6\. Press "Request Withdrawal" button.
 
-![](<../.gitbook/assets/image (13) (1).png>)
+![](<../.gitbook/assets/image (13) (1) (1).png>)
 
 Estimated confirmation time is few minutes.
 
